@@ -36,7 +36,7 @@ Start Content
     <div class="container">
       <div class="row g-4 g-md-3  align-items-center">
         <div class="col-md-auto order-md-last">
-          <div class="bannerUserImg" style=" float:right;">
+          <div class="bannerUserImg">
             <img src="{{me.userprofile.avatar.url}}" alt="{{me.first_name|title}} {{me.last_name|title}} avatar">
           </div>
         </div>
@@ -69,16 +69,16 @@ Start Content
           <div class="keySkillCol">
             <h4 class="smTitle pb-3">Key Skills</h4>
             {% for sk in me.userprofile.skills.all %}
-            {% if sk.is_key_skill %}
-            <div class="keySkillCard">
-              {% if sk.image %}
-              <div class="ksIconCol">
-                <img src="{{sk.image.url}}" alt="...">
-              </div>
+              {% if sk.is_key_skill %}
+                <div class="keySkillCard">
+                  {% if sk.image %}
+                    <div class="ksIconCol">
+                      <img src="{{sk.image.url}}" alt="...">
+                    </div>
+                  {% endif %}
+                  <span class="ksText">{{sk.name}}</span>
+                </div>
               {% endif %}
-              <span class="ksText">{{sk.name}}</span>
-            </div>
-            {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -87,23 +87,22 @@ Start Content
           <div class="progressCol">
             <div class="progressCard">
               {% for sk in me.userprofile.skills.all %}
-              {% if sk.is_key_skill %}
-              <div class="progressCol">
-                <span class="progressLbl">{{sk.name}}</span>
-                <div class="row g-2 align-items-center">
-                  <div class="col">
-                    <div class="progress progressStyle">
-                      <div class="progress-bar" role="progressbar" style="width: {{sk.score}}%" aria-valuenow="{{sk.score}}" aria-valuemin="0" aria-valuemax="100"></div>
+                {% if not sk.is_key_skill %}
+                  <div class="progressCol">
+                    <span class="progressLbl">{{sk.name}}</span>
+                    <div class="row g-2 align-items-center">
+                      <div class="col">
+                        <div class="progress progressStyle">
+                          <div class="progress-bar" role="progressbar" style="width: {{sk.score}}%" aria-valuenow="{{sk.score}}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <span class="pLbl">{{sk.score}}%</span>
+                      </div>
                     </div>
                   </div>
-                  <div class="col-auto">
-                    <span class="pLbl">{{sk.score}}%</span>
-                  </div>
-                </div>
-              </div>
-              {% endif %}
+                {% endif %}
               {% endfor %}
-              
             </div>
           </div>
         </div>
@@ -111,6 +110,7 @@ Start Content
     </div>
   </div>
 </section>
+
 
 <section>
   <div class="sectionSpaceSm lightBg">

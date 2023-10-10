@@ -171,87 +171,110 @@ header {
 
 /* Style the "Download Resume" button */
 .btnPrimary {
-  background-color: #007bff; /* Blue color for the primary button */
+  background-color: #134505;
   color: #fff; /* White text color */
+  border: 2px solid #0d2005;
   padding: 10px 20px; /* Add padding to the button */
   text-decoration: none; /* Remove underline from the link */
   border-radius: 5px; /* Add rounded corners */
 }
 
 .btnPrimary:hover {
-  background-color: #0056b3; /* Darker blue color on hover */
+  background-color: #369841;
 }
 
 /* Style the "Contact" button */
 .btnOutline {
-  background-color: chocolate;
-  color: #073260; /* Blue text color */
-  border: 2px solid #007bff; /* Blue border */
+  background-color: #134505;
+  color: #fff; 
+  border: 2px solid #0d2005; 
   padding: 10px 20px; /* Add padding to the button */
   text-decoration: none; /* Remove underline from the link */
   border-radius: 5px; /* Add rounded corners */
 }
 
 .btnOutline:hover {
-  background-color: #d8d7d759; /* Light gray background on hover */
+  background-color:  #369841; /* Light gray background on hover */
 }
 
 .bannerBtnCol .btn {
   margin-right: 10px; /* Add some space between buttons */
 }
 
-/* Styles for the keySkillCol */
+/* Key Skills section */
+.col-md-auto{
+  margin-top: 20px;
+}
 .keySkillCol {
-  text-align: center; /* Center-align the content */
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.keySkillCol h4 {
-  font-size: 18px; /* Font size for the skills title */
-  color: #333; /* Text color for the skills title */
-  margin-bottom: 20px; /* Add some space below the title */
-}
-
-/* Styles for the keySkillCard */
 .keySkillCard {
-  display: inline-block; /* Display key skill cards inline */
-  margin-right: 20px; /* Add some space between key skill cards */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
-.keySkillCard img {
-  max-width: 50px; /* Set the maximum width for skill icons */
-  max-height: 50px; /* Set the maximum height for skill icons */
+.ksIconCol {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
-.keySkillCard .ksText {
-  font-size: 16px; /* Font size for skill text */
-  color: #333; /* Text color for skill text */
+.ksIconCol img {
+  max-width: 100%;
+  height: auto;
 }
 
-/* Styles for the progressCol */
+.ksText {
+  font-size: 16px;
+}
+
+/* Coding Skills section */
+
 .progressCol {
-  margin-top: 20px; /* Add some margin at the top of progress bars */
+  margin-top: 20px;
+}
+
+.progressCard {
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .progressLbl {
-  font-size: 16px; /* Font size for skill labels */
-  color: #777; /* Text color for skill labels */
+  font-size: 16px;
 }
 
-/* Styles for the progress bars */
 .progressStyle {
-  height: 10px; /* Height of progress bars */
-  background-color: #ddd; /* Background color for progress bars */
-  border-radius: 5px; /* Rounded corners for progress bars */
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
 }
 
 .progress-bar {
-  border-radius: 5px; /* Rounded corners for progress bars */
+  height: 100%;
+  border-radius: 5px;
 }
 
 .pLbl {
-  font-size: 16px; /* Font size for skill percentages */
-  color: #333; /* Text color for skill percentages */
+  font-size: 14px;
+  font-weight: bold;
 }
+
+/* Container Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Add more styles as needed and customize the colors, fonts, and spacing to match your design preferences. */
+
 
 /* Styles for the certificatesSlider */
 .certificatesSlider {
