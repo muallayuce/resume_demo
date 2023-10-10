@@ -47,6 +47,14 @@ INSTALLED_APPS = [
     'ckeditor',
 ]
 
+# CKEditor configuration (optional, but recommended)
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',  # You can customize the toolbar options here.
+        'height': 300,      # Set the initial height of the CKEditor field.
+    },
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

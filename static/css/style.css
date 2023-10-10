@@ -1,779 +1,494 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Heebo:wght@400;500;700;900&display=swap');
-/* font-family: 'Courier Prime', monospace;
-font-family: 'Heebo', sans-serif; */
-:root {
-  --primaryColor: #9C07B6;
-  --primaryDarkColor: #3D0048;
-  --primaryHoverColor: #900AA8;
-  --secondaryColor: #F9B000;
-  --baseColor: #21243D;
-  --baseFont: 'Heebo', sans-serif;
-  --titleFont: 'Courier Prime', monospace;
-  --regular: 400;
-  --medium: 500;
-  --bold: 700;
-  --black: 900;
-  --lightBg: #F1F1F1;
+/* Styles for the header/navigation bar */
+header {
+  background-color: #d16411; /* Background color for the header */
+  color: #fff; /* Text color for the header */
+  padding: 10px 0; /* Padding at the top and bottom of the header */
 }
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: var(--baseFont);
-  color: var(--baseColor);
-  line-height: normal;
-}
-ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-img {
-  max-width: 100%;
-}
-a {
-  color: inherit;
-}
-a:hover {
-  color: var(--primaryDarkColor);
-}
-a, .btn {
-  -webkit-transition: all 300ms ease-in-out 0s;
-  -o-transition: all 300ms ease-in-out 0s;
-  transition: all 300ms ease-in-out 0s;
-  text-decoration: none;
-}
-.btn:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-.primaryColor {
-  color: var(--primaryColor);
-}
-.primaryDarkColor {
-  color: var(--primaryDarkColor);
-}
-.lightBg {
-  background-color: var(--lightBg);
-}
-.col-auto {
-  margin-bottom: 30px; /* Add padding here */
-}
-
-.btn {
-  font-size: 20px;
-  font-weight: var(--medium);
-  padding: 8px 20px;
-  border-radius: 2px;
-}
-.btnPrimary {
-  background-color: var(--primaryColor);
-  color: var(--bs-white);
-}
-.btnPrimary:hover {
-  background-color: var(--primaryDarkColor);
-  color: var(--bs-white);
-}
-.btnOutline {
-	border: 1px solid var(--primaryDarkColor);
-	color: var(--primaryDarkColor);
-}
-.btnOutline:hover {
-	border: 1px solid var(--primaryDarkColor);
-  background-color: var(--primaryDarkColor);
-	color: var(--bs-white);
-}
-.btn:focus {
-  outline: none;
-}
-
-
-/* titles */
-.xlTitle {
-  font-size: 44px;
-  line-height: 1.3;
-  font-weight: var(--bold);
-  font-family: var(--titleFont)
-}
-.lgTitle {
-  font-size: 30px;
-  line-height: normal;
-  font-weight: var(--bold);
-  font-family: var(--titleFont)
-}
-.mdTitle {
-  font-size: 26px;
-  line-height: normal;
-  font-weight: var(--bold);
-  font-family: var(--titleFont)
-}
-.smTitle {
-  font-size: 22px;
-  line-height: normal;
-  font-weight: var(--regular);
-  font-family: var(--titleFont)
-}
-.smText {
-  font-size: 22px;
-}
-.xsTitle {
-  font-size: 18px;
-  line-height: normal;
-}
-
-.regular {
-  font-weight: var(--regular);
-}
-.medium {
-  font-weight: var(--medium);
-}
-.bold {
-  font-weight: var(--bold);
-}
-.black {
-  font-weight: var(--black);
-}
-
 
 .headerCol {
-  background-color: var(--bs-white);
-	padding: 18px 0;
-	-webkit-transition: all 300ms ease-in-out 0s;
-	-o-transition: all 300ms ease-in-out 0s;
-	transition: all 300ms ease-in-out 0s;
-	position: fixed;
-  z-index: 99;
-	left: 0;
-	right: 0;
-	top: 0;
-}
-.fixedHeader .headerCol {
-	padding: 10px 0;
-	-webkit-box-shadow: 0 0 24px rgba(0,0,0,0.1);
-  box-shadow: 0 0 24px rgba(0,0,0,0.1);
+  text-align: center; /* Center-align the contents of the header */
 }
 
+.logoCol a {
+  width: 150px;
+  height: auto; /* Maintain aspect ratio */
+  color: #ddd;
+  text-decoration: none;
+  font-size: 40px;
+}
 
-/* navigation */
-.navCol {
-	text-align: right;
-}
-.navCol a {
-	font-size: 20px;
-	color: #000;
-  font-weight: var(--medium);
-  display: inline-block;
-  position: relative;
-}
-.navCol a:hover {
-  color: var(--primaryColor);
-}
-.navCol a::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  right: 50%;
-  bottom: 0;
-  height: 2px;
-  border-radius: 2px;
-  background-color: var(--primaryColor);
-  -webkit-transition: all 500ms ease-in-out 0s;
-  -o-transition: all 500ms ease-in-out 0s;
-  transition: all 500ms ease-in-out 0s;
-  opacity: 0;
-}
-.navCol a.active::before {
-  opacity: 1;
-  width: 27px;
-  right: auto;
-  left: 0;
-}
-.navCol a:hover::before {
-  opacity: 1;
-  left: 0;
-  right: 0;
-}
-.navCol a.active {
-  color: var(--primaryColor);
-}
-.navCol li {
-	display: inline-block;
-}
-.navCol li + li {
-  padding-left: 32px;
-}
-/*   /navigation */
-
-
-/* nav toggle */
 .navToggle {
-	display: block;
-	padding: 15px 12px;
-	width: 18px;
-	height: 2px;
-	box-sizing: content-box;
-	background-clip: content-box;
-	-webkit-transition: background-color 500ms ease-in-out 250ms;
-  -o-transition: background-color 500ms ease-in-out 250ms;
-  transition: background-color 500ms ease-in-out 250ms;
-	background-color: #000;
-	border: 1px solid rgba(0,0,0,0.2);
-  margin-left: auto;
-}
-.navToggle:hover {
+  display: none; /* Hide the navigation toggle button by default */
+  background: none;
+  border: none;
+  color: #fff; /* Text color for the toggle button */
   cursor: pointer;
-}
-.navToggle:before, .navToggle:after {
-  position: relative;
-  content: "";
-  display: block;
-  width: 18px;
-  height: 2px;
-  background-color: #000;
-  -webkit-transition: transform 500ms ease-in-out;
-  -o-transition: transform 500ms ease-in-out;
-  transition: transform 500ms ease-in-out;
-}
-.navToggle:before {
-  top: -6px;
-}
-.navToggle:after {
-  bottom: -4px;
-}
-.navToggle__text {
-  display: none;
-}
-.navToggleActive .navToggle {
-  background-color: rgba(255, 255, 255, 0);
-  transition-delay: 0s;
-}
-.navToggleActive .navToggle:before {
-  -webkit-transform: translateY(6px) rotate(-225deg);
-  -ms-transform: translateY(6px) rotate(-225deg);
-  transform: translateY(6px) rotate(-225deg);
-}
-.navToggleActive .navToggle:after {
-  -webkit-transform: translateY(-6px) rotate(225deg);
-  -ms-transform: translateY(-6px) rotate(225deg);
-  transform: translateY(-6px) rotate(225deg);
-}
-/*   /nav toggle */
-
-
-/* banner section */
-.bannerSection {
-	padding: 180px 0 80px;
-}
-.bannerUserImg {
-  margin-left: 30px;
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  position: relative;
-}
-.bannerUserImg img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  border-radius: 50%;
-  position: relative;
-}
-.bannerUserImg::before {
-  content: "";
-  position: absolute;
-  left: -5px;
-  top: 13px;
-  width: 100%;
-  height: 100%;
-  background-color: #EDF7FA;
-  border-radius: 50%;
-}
-.bannerBtnCol {
-	padding-top: 15px;
-}
-
-.sectionSpace {
-  padding: 80px 0;
-}
-.sectionSpaceSm {
-  padding: 35px 0;
-}
-.ksText {
-	display: block;
-	padding-top: 10px;
-}
-.keySkillCard + .keySkillCard {
-  padding-top: 25px;
-}
-.keySkillCol {
-  width: 300px;
-}
-.pLbl {
-  display: block;
-  width: 50px;
-  text-align: right;
-}
-
-.progress.progressStyle {
-	height: 8px;
-	padding: 1px;
-	background-color: var(--secondaryColor);
-	border-radius: 3px;
-}
-.progressStyle .progress-bar {
-	background-color: #fff;
-	border-radius: 3px;
-}
-.progressCol + .progressCol {
-	padding-top: 18px;
-}
-
-.cardOptionCol > li {
-	display: inline-block;
-	vertical-align: middle;
-  position: relative;
-}
-.cardOptionCol > li + li {
-  padding-left: 40px;
-}
-.cardOptionCol > li + li::before {
-  content: "|";
-  position: absolute;
-  left: 16px;
-}
-.cardOptionCol {
-	padding: 5px 0 10px;
-}
-.cardStyle1 {
-	padding: 25px;
-	background-color: var(--bs-white);
-	border-radius: 4px;
-  height: 100%;
-}
-.cardStyle1 > p:last-child {
-	margin-bottom: 0;
-}
-.cs1Title {
-  min-height: 90px;
-}
-
-.dateLbl {
-	display: inline-block;
-	padding: 4px 12px;
-	background-color: #142850;
-	border-radius: 20px;
-	color: #fff;
-	font-size: 18px;
-	line-height: 1;
-	font-weight: var(--bold);
-}
-.sliderOuter {
-  position: relative;
-}
-.sliderOuter .swiper-button-next.swiperBtnStyle {
-  right: -50px;
-}
-.sliderOuter .swiper-button-prev.swiperBtnStyle {
-  left: -50px;
-}
-.sliderOuter .swiper-slide {
-  height: auto;
-}
-.swiperPaginationStyle span.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: var(--primaryColor);
-}
-.posInitial {
-  position: initial;
-}
-.portfolioOption li {
-  display: inline-block;
-  padding-right: 20px;
-}
-.portfolioOption {
-	padding: 5px 0 16px;
-}
-.portfolioContentCol > p:last-child {
-  margin-bottom: 0;
-}
-.portfolioImgCol img {
-  border-radius: 6px;
-  width: 246px;
-  height: 184px;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-.portfolioCard {
-  padding: 20px 0;
-  border-bottom: 1px solid #E0E0E0;
-}
-
-
-
-.testimonialCol {
-  padding-top: 35px;
-}
-.tContentCol > p:last-child {
-  margin-bottom: 0;
-}
-.tImgCol {
-	width: 95px;
-	height: 95px;
-	margin-right: 5px;
-	border-radius: 50%;
-}
-.tImgCol img {
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-}
-
-.swiperBtnStyle {
-	width: 35px;
-	height: 35px;
-	color: #fff;
-	background-color: var(--primaryColor);
-	border-radius: 50%;
-}
-
-.swiper-button-next.swiperBtnStyle::after, .swiper-button-prev.swiperBtnStyle::after {
   font-size: 16px;
 }
-.swiperBtnStyle.swiper-button-prev {
-	left: 2px;
-}
-.swiperBtnStyle.swiper-button-next {
-	right: 2px;
-}
-.testimonialSlider {
-	padding: 30px 0;
-}
-.testimonialSlider .swiper-slide {
-  padding: 0 40px;
+
+.navToggle:focus {
+  outline: none; /* Remove the default focus outline */
 }
 
-
-body.navToggleActive {
-	overflow: hidden;
+.navCollapseCol {
+  display: block; /* Display the navigation links on larger screens */
 }
 
-
-
-
-/* footer */
-.footerCol {
-  padding: 50px 0;
-  text-align: center;
-}
-.socialCol li {
-  display: inline-block;
-}
-.socialCol li + li {
-  padding-left: 35px;
-}
-.socialCol img {
-  max-width: 30px;
-  max-height: 30px;
-  -o-object-fit: contain;
-  object-fit: contain;
-}
-.copyrightCol {
-	padding: 20px 0 0;
-  font-size: 14px;
-}
-.copyrightCol p {
-	margin: 0;
+.navCol ul {
+  list-style: none; /* Remove list bullets */
+  padding: 0; /* Remove default padding */
+  text-align: center; /* Center-align the navigation links */
 }
 
-
-/* portfolio page */
-.innerPageBannerCol {
-	padding: 180px 0 150px;
-}
-.portfolioContentMain {
-  position: relative;
-  z-index: 1;
-  padding: 50px 0 ;
-}
-.pCol {
-  height: 100%;
-}
-.pImg {
-  width: 100%;
+.navCol ul li {
+  display: inline-block; /* Display navigation links horizontally */
+  margin-right: 20px; /* Add some space between navigation links */
 }
 
-.portfolioRow .pColMain:nth-child(2n-1) .pCol {
-  margin-top: -110px;
-}
-@media (min-width:576px) {
-  .swiper-pagination {
-    display: none;
-  }
-}
-@media (min-width:992px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-  	max-width: 890px;
-  }
-  .headerCol .container-fluid {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-@media (min-width:1200px) {
-  .headerCol .container-fluid {
-    padding-left: 55px;
-    padding-right: 55px;
-  }
+.navCol ul li:last-child {
+  margin-right: 0; /* Remove right margin for the last navigation link */
 }
 
-@media (max-width:1199px) {
-  .navCol a {
-  	font-size: 18px;
-  }
-  .xlTitle {
-  	font-size: 40px;
-  }
-  .lgTitle {
-  	font-size: 28px;
-  }
-  .mdTitle {
-  	font-size: 24px;
-  }
-  .btn {
-  	font-size: 18px;
-  }
-  .cs1Title {
-  	min-height: 60px;
-  }
-  .bannerSection {
-  	padding: 150px 0 60px;
-  }
-  .sectionSpace {
-  	padding: 60px 0;
-  }
-  .footerCol {
-  	padding: 30px 0;
-  }
-  .innerPageBannerCol {
-  	padding: 150px 0 100px;
-  }
+.navCol ul li a {
+  color: #fff; /* Text color for navigation links */
+  text-decoration: none; /* Remove underlines from navigation links */
+  font-weight: bold; /* Make navigation link text bold */
+  font-size: 16px; /* Set font size for navigation links */
+  transition: color 0.3s; /* Add a smooth color transition on hover */
 }
 
-@media (max-width:991px) {
-  .sliderOuter .swiper-button-next.swiperBtnStyle {
-    right: -20px;
-  }
-  .sliderOuter .swiper-button-prev.swiperBtnStyle {
-    left: -20px;
-  }
-  .navCol a {
-  	font-size: 16px;
-  }
-  .xlTitle {
-  	font-size: 32px;
-  }
-  body {
-    font-size: 14px;
-  }
-  .bannerUserImg {
-  	margin-left: 20px;
-  	width: 220px;
-  	height: 220px;
-  }
-  .btn {
-  	font-size: 16px;
-  }
-  .bannerBtnCol {
-  	padding-top: 10px;
-  }
-  .smTitle {
-  	font-size: 18px;
-  }
-  .keySkillCard + .keySkillCard {
-  	padding-top: 20px;
-  }
-  .keySkillCol {
-  	width: 250px;
-  }
-  .cs1Title {
-  	min-height: auto;
-  }
-
-  .innerPageBannerCol{
-  	padding: 120px 0 50px;
-  }
-  .portfolioRow .pColMain:nth-child(2n-1) .pCol {
-  	margin-top: -70px;
-  }
-  .portfolioContentMain {
-  	padding: 30px 0;
-  }
+.navCol ul li a:hover {
+  color: #ff8800; /* Change text color on hover */
 }
 
-@media (max-width:767px) {
+/* Media query for responsiveness - adjust as needed */
+@media (max-width: 768px) {
+  .navToggle {
+    display: block; /* Display the navigation toggle button on smaller screens */
+    margin: 10px 0; /* Add some margin to the toggle button */
+  }
+
   .navCollapseCol {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 230px;
-    padding: 20px;
-    background: var(--primaryDarkColor);
-    z-index: 99;
-    -webkit-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-    transform: translateX(-100%);
-    -webkit-transition: all 300ms ease-in-out 0s;
-    -o-transition: all 300ms ease-in-out 0s;
-    transition: all 300ms ease-in-out 0s;
-  }
-  .navToggleActive .navCollapseCol {
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-  }
-  .navCol {
-  	text-align: left;
-  }
-  .navCol li + li {
-  	padding-left: 0;
-  }
-  .navCol li {
-  	padding: 5px 0;
-  }
-  .navCol li {
-  	display: block;
-  }
-  .navCol a::before {
-    display: none;
-  }
-  .navCol a {
-  	font-size: 16px;
-    color: var(--bs-white);
+    display: none; /* Hide the navigation links on smaller screens by default */
   }
 
-  .bannerUserImg {
-  	margin-left: 0;
-  	width: 180px;
-  	height: 180px;
-  }
-  .bannerSection {
-  	padding: 120px 0 50px;
-  }
-  .tImgCol {
-  	margin-right: 0;
-  }
-  .socialCol img {
-  	max-width: 20px;
-  	max-height: 20px;
-  }
-  .socialCol li + li {
-  	padding-left: 20px;
-  }
-  .copyrightCol {
-  	padding: 15px 0 0;
-  	font-size: 12px;
-  }
-  .footerCol {
-  	padding: 20px 0;
-  }
-  .mdTitle {
-  	font-size: 22px;
-  }
-  .lgTitle {
-  	font-size: 24px;
-  }
-  .smText {
-  	font-size: 18px;
-  }
-  .dateLbl {
-  	font-size: 15px;
-  }
-  .sectionSpace {
-  	padding: 50px 0;
+  .navCol ul {
+    text-align: left; /* Left-align navigation links on smaller screens */
   }
 
-  .portfolioRow .pColMain:nth-child(2n-1) .pCol {
-  	margin-top: 0;
-  }
-  .innerPageBannerCol {
-  	padding: 100px 0 30px;
-  }
-  .navCol a:hover, .navCol a.active {
-  	color: var(--bs-white);
-    opacity: 1;
-  }
-  .navCol a {
-    opacity: 0.8;
-  }
-  .logoCol img {
-  	width: 50px;
-  }
-  .fixedHeader .headerCol,  .headerCol {
-  	padding: 10px 0;
+  .navCol ul li {
+    display: block; /* Display navigation links as a list on smaller screens */
+    margin-bottom: 10px; /* Add space between list items */
   }
 }
 
-@media(max-width:575px) {
-  .sliderOuter .swiper-button-prev.swiperBtnStyle ,
-  .sliderOuter .swiper-button-next.swiperBtnStyle {
-    display: none;
-  }
-  .testimonialSlider .swiper-slide {
-  	padding: 0 0px 50px;
-  }
-  .swiperBtnStyle.swiper-button-next {
-  	right: auto;
-  	top: auto;
-  	bottom: 0;
-  	left: 50%;
-  	margin-left: 5px;
-  }
-  .swiperBtnStyle.swiper-button-prev {
-  	left: auto;
-  	top: auto;
-  	bottom: 0;
-  	right: 50%;
-  	margin-right: 5px;
-  }
-  .testimonialSlider {
-  	padding: 10px 0 0;
-  }
-  .sectionSpace {
-  	padding: 40px 0;
-  }
-  .cardStyle1 {
-  	padding: 15px;
-  }
-  .btn {
-  	font-size: 14px;
-  }
-  .xlTitle {
-  	font-size: 26px;
-  }
-  .lgTitle {
-  	font-size: 22px;
-  }
-  .mdTitle {
-  	font-size: 20px;
-  }
-  .swiperBtnStyle {
-  	width: 30px;
-  	height: 30px;
-  }
-  .swiper-button-next.swiperBtnStyle::after, .swiper-button-prev.swiperBtnStyle::after {
-  	font-size: 14px;
-  }
+/* Styles for the innerPageBannerCol */
+.innerPageBannerCol {
+  background-color: #f7f7f7; /* Background color for the banner section */
+  padding: 40px 0; /* Padding at the top and bottom of the banner section */
+  text-align: center; /* Center-align the content */
 }
 
-input[type=text], input[type=email], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical
+.bannerContent h1 {
+  font-size: 36px; /* Font size for the title */
+  color: #333; /* Text color for the title */
+}
+
+/* Styles for the lightBg section */
+.lightBg {
+  background-color: #fff; /* Background color for the light background section */
+  padding: 40px 0; /* Padding at the top and bottom of the section */
+}
+
+/* Styles for the portfolioContentMain */
+.portfolioContentMain {
+  text-align: center; /* Center-align the content */
+}
+
+/* Styles for the portfolioRow */
+.portfolioRow {
+  margin-top: 20px; /* Add some margin at the top of the row */
+}
+
+/* Styles for individual portfolio items */
+.pColMain {
+  margin-bottom: 20px; /* Add some space between portfolio items */
+}
+
+.pCol {
+  border: 1px solid #ddd; /* Add a border around each portfolio item */
+  padding: 10px; /* Padding inside the portfolio item */
+  transition: transform 0.3s ease; /* Add a smooth transition effect on hover */
+}
+
+.pCol:hover {
+  transform: scale(1.05); /* Scale up the portfolio item on hover */
+}
+
+.pImg {
+  max-width: 100%; /* Ensure images don't exceed their container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Additional styles for text content within the container */
+.container p {
+  font-size: 16px; /* Font size for paragraphs */
+  line-height: 1.5; /* Line height for paragraphs */
+  color: #333; /* Text color for paragraphs */
+}
+
+/* Styles for the bannerSection */
+.bannerSection {
+  background-color: #f7f7f7; /* Background color for the banner section */
+  padding: 40px 0; /* Padding at the top and bottom of the banner section */
+  text-align: center; /* Center-align the content */
+}
+
+.bannerUserImg img {
+  max-width: 100px; /* Set the maximum width for the user image */
+  border-radius: 50%; /* Make the user image round */
+}
+
+.bannerContent h1 {
+  font-size: 36px; /* Font size for the title */
+  color: #333; /* Text color for the title */
+}
+
+.bannerContent p {
+  font-size: 18px; /* Font size for the bio */
+  color: #777; /* Text color for the bio */
+}
+
+.bannerBtnCol {
+  margin-top: 20px; /* Add some margin at the top of the button column */
+}
+
+/* Style the individual button containers */
+.col-auto {
+  margin-right: 10px;
+  margin-bottom: 30px;
+}
+
+/* Style the "Download Resume" button */
+.btnPrimary {
+  background-color: #007bff; /* Blue color for the primary button */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Add padding to the button */
+  text-decoration: none; /* Remove underline from the link */
+  border-radius: 5px; /* Add rounded corners */
+}
+
+.btnPrimary:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Style the "Contact" button */
+.btnOutline {
+  background-color: chocolate;
+  color: #073260; /* Blue text color */
+  border: 2px solid #007bff; /* Blue border */
+  padding: 10px 20px; /* Add padding to the button */
+  text-decoration: none; /* Remove underline from the link */
+  border-radius: 5px; /* Add rounded corners */
+}
+
+.btnOutline:hover {
+  background-color: #d8d7d759; /* Light gray background on hover */
+}
+
+.bannerBtnCol .btn {
+  margin-right: 10px; /* Add some space between buttons */
+}
+
+/* Styles for the keySkillCol */
+.keySkillCol {
+  text-align: center; /* Center-align the content */
+}
+
+.keySkillCol h4 {
+  font-size: 18px; /* Font size for the skills title */
+  color: #333; /* Text color for the skills title */
+  margin-bottom: 20px; /* Add some space below the title */
+}
+
+/* Styles for the keySkillCard */
+.keySkillCard {
+  display: inline-block; /* Display key skill cards inline */
+  margin-right: 20px; /* Add some space between key skill cards */
+}
+
+.keySkillCard img {
+  max-width: 50px; /* Set the maximum width for skill icons */
+  max-height: 50px; /* Set the maximum height for skill icons */
+}
+
+.keySkillCard .ksText {
+  font-size: 16px; /* Font size for skill text */
+  color: #333; /* Text color for skill text */
+}
+
+/* Styles for the progressCol */
+.progressCol {
+  margin-top: 20px; /* Add some margin at the top of progress bars */
+}
+
+.progressLbl {
+  font-size: 16px; /* Font size for skill labels */
+  color: #777; /* Text color for skill labels */
+}
+
+/* Styles for the progress bars */
+.progressStyle {
+  height: 10px; /* Height of progress bars */
+  background-color: #ddd; /* Background color for progress bars */
+  border-radius: 5px; /* Rounded corners for progress bars */
+}
+
+.progress-bar {
+  border-radius: 5px; /* Rounded corners for progress bars */
+}
+
+.pLbl {
+  font-size: 16px; /* Font size for skill percentages */
+  color: #333; /* Text color for skill percentages */
+}
+
+/* Styles for the certificatesSlider */
+.certificatesSlider {
+  margin-top: 20px; /* Add some margin at the top of the certificates slider */
+}
+
+/* Styles for the cardStyle1 */
+.cardStyle1 {
+  background-color: #fff; /* Background color for cards */
+  border: 1px solid #ddd; /* Border for cards */
+  padding: 20px; /* Padding inside cards */
+  margin-bottom: 20px; /* Add some margin at the bottom of cards */
+}
+
+.cs1Title a {
+  font-size: 20px; /* Font size for card titles */
+  color: #333; /* Text color for card titles */
+}
+
+.cardOptionCol {
+  list-style: none; /* Remove list bullets for card options */
+  padding: 0; /* Remove default padding for card options */
+}
+
+.cardOptionCol li {
+  font-size: 16px; /* Font size for card options */
+  color: #777; /* Text color for card options */
+  margin-bottom: 10px; /* Add some space between card options */
+}
+
+/* Styles for the portfolioCol */
+.portfolioCol {
+  margin-top: 40px; /* Add some margin at the top of the portfolio section */
+}
+
+.portfolioCard {
+  background-color: #fff; /* Background color for portfolio cards */
+  border: 1px solid #ddd; /* Border for portfolio cards */
+  padding: 20px; /* Padding inside portfolio cards */
+  margin-bottom: 20px; /* Add some margin at the bottom of portfolio cards */
+}
+
+.portfolioCard .lgTitle a {
+  font-size: 24px; /* Font size for portfolio titles */
+  color: #333; /* Text color for portfolio titles */
+}
+
+.portfolioOption {
+  list-style: none; /* Remove list bullets for portfolio options */
+  padding: 0; /* Remove default padding for portfolio options */
+}
+
+.portfolioOption li {
+  font-size: 16px; /* Font size for portfolio options */
+  color: #777; /* Text color for portfolio options */
+}
+
+/* Styles for the testimonialCol */
+.testimonialCol {
+  margin-top: 40px; /* Add some margin at the top of the testimonial section */
+}
+
+.testimonialCol h4 {
+  font-size: 20px; /* Font size for the testimonials title */
+  color: #333; /* Text color for the testimonials title */
+  margin-bottom: 20px; /* Add some margin at the bottom of the title */
+}
+
+/* Styles for the testimonialSlider */
+.testimonialSlider {
+  margin-top: 20px; /* Add some margin at the top of the testimonial slider */
+}
+
+/* Styles for the testimonialCard */
+.testimonialCard {
+  background-color: #fff; /* Background color for testimonial cards */
+  border: 1px solid #ddd; /* Border for testimonial cards */
+  padding: 20px; /* Padding inside testimonial cards */
+  margin-bottom: 20px; /* Add some margin at the bottom of testimonial cards */
+}
+
+.testimonialCard .tImgCol img {
+  max-width: 100px; /* Set the maximum width for testimonial images */
+  border-radius: 50%; /* Make testimonial images round */
+}
+
+.testimonialCard h4 {
+  font-size: 18px; /* Font size for testimonial names and roles */
+  color: #333; /* Text color for testimonial names and roles */
+  font-weight: bold; /* Bold font weight for names and roles */
+  margin-bottom: 10px; /* Add some margin at the bottom of names and roles */
+}
+
+.testimonialCard p {
+  font-size: 16px; /* Font size for testimonial quotes */
+  color: #777; /* Text color for testimonial quotes */
+}
+
+/* Styles for the Recent posts section */
+.lightBg {
+  background-color: #f7f7f7; /* Background color for the light background section */
+  padding: 40px 0; /* Padding at the top and bottom of the section */
+}
+
+.lightBg h4 {
+  font-size: 20px; /* Font size for the Recent posts title */
+  color: #333; /* Text color for the Recent posts title */
+  margin-bottom: 20px; /* Add some margin at the bottom of the title */
+}
+
+.simpleLink {
+  color: #333; /* Text color for links */
+  text-decoration: none; /* Remove underlines from links */
+}
+
+.simpleLink:hover {
+  text-decoration: underline; /* Add underline on hover for links */
+}
+
+
+/* Styles for the innerPageBannerCol */
+.innerPageBannerCol {
+  background-color: #f7f7f7; /* Background color for the banner section */
+  padding: 40px 0; /* Padding at the top and bottom of the banner section */
+}
+
+.bannerContent h1 {
+  font-size: 36px; /* Font size for the title */
+  color: #333; /* Text color for the title */
+}
+
+.authorCol h4 {
+  font-size: 18px; /* Font size for the author's name */
+  color: #777; /* Text color for the author's name */
+}
+
+/* Styles for the timestamp */
+.col-md h4 {
+  font-size: 18px; /* Font size for the timestamp */
+  color: #777; /* Text color for the timestamp */
+}
+
+/* Styles for the sectionSpaceSm */
+.sectionSpaceSm {
+  padding: 40px 0; /* Padding at the top and bottom of the section */
+}
+
+/* Styles for the container within the sectionSpaceSm */
+.container {
+  max-width: 960px; /* Set a maximum width for content within the container */
+}
+
+/* Additional styles for text content within the container */
+.container p {
+  font-size: 16px; /* Font size for paragraphs */
+  line-height: 1.5; /* Line height for paragraphs */
+  color: #333; /* Text color for paragraphs */
+}
+
+/* Styles for the innerPageBannerCol */
+.innerPageBannerCol {
+  background-color: #f7f7f7; /* Background color for the banner section */
+  padding: 40px 0; /* Padding at the top and bottom of the banner section */
+  text-align: center; /* Center-align the content */
+}
+
+.bannerContent h1 {
+  font-size: 36px; /* Font size for the title */
+  color: #333; /* Text color for the title */
+}
+
+/* Styles for the lightBg section */
+.lightBg {
+  background-color: #fff; /* Background color for the light background section */
+  padding: 40px 0; /* Padding at the top and bottom of the section */
+}
+
+/* Styles for the container within the lightBg section */
+.container {
+  max-width: 600px; /* Set a maximum width for content within the container */
+  margin: 0 auto; /* Center-align the container */
+}
+
+/* Styles for form labels and input fields */
+label {
+  font-size: 18px; /* Font size for labels */
+  color: #333; /* Text color for labels */
+  margin-bottom: 10px; /* Add some space below each label */
+  display: block; /* Display labels as block elements */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%; /* Make input fields and textareas 100% width */
+  padding: 10px; /* Padding inside input fields and textareas */
+  border: 1px solid #ccc; /* Add a border to input fields and textareas */
+  margin-bottom: 20px; /* Add some space below each input field or textarea */
+  font-size: 16px; /* Font size for input fields and textareas */
+}
+
+/* Style the Submit button */
+input[type="submit"] {
+  background-color: #333; /* Background color for the Submit button */
+  color: #fff; /* Text color for the Submit button */
+  border: none; /* Remove the button border */
+  padding: 15px 20px; /* Padding inside the Submit button */
+  font-size: 18px; /* Font size for the Submit button */
+  cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+/* Additional styles for text content within the container */
+.container p {
+  font-size: 16px; /* Font size for paragraphs */
+  line-height: 1.5; /* Line height for paragraphs */
+  color: #333; /* Text color for paragraphs */
+}
+
+
+/* Styles for the footer */
+footer {
+  background-color: #d16411; /* Background color for the footer */
+  padding: 20px 0; /* Padding at the top and bottom of the footer */
+}
+
+.footerCol p{
+  text-align: center; /* Center-align the contents of the footer */
+  color: #ccc;
+}
+
+.copyrightCol {
+  margin-top: 20px; /* Add some space at the top of the copyright text */
+}
+
+/* Media query for responsiveness - adjust as needed */
+@media (max-width: 768px) {
+  .socialCol li {
+    margin-right: 10px; /* Reduce space between social icons on smaller screens */
+  }
 }
